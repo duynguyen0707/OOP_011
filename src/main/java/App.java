@@ -1,5 +1,8 @@
-import entities.Account;
-import entities.ToaDoDiem;
+import entities.Diem;
+import entities.DonThuc;
+import entities.Triangle;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -43,32 +46,43 @@ public class App {
 //       int chuvi= trg.tinhChuvi();
 //       System.out.println("Chu vi của tam giác là: "+ chuvi);
 
-     //   =========== toa diem diem=====
-//        ToaDoDiem tdA = new ToaDoDiem();
-//        tdA.nhapToaDo(); // x,y 1,2 cho A, gán
-//
-//        ToaDoDiem tdB = new ToaDoDiem();
-//        tdB.nhapToaDo(); // x 3, y 4 cho B
-//
-//        double tong = tdA.khoangCachAB(tdB);
-//        System.out.println("Tổng : "+ tong);
 
-        Account A = new Account();
-        A.init("0001", "Nguyen A");
-        A.print();
-        A.napTien();
-        long n = A.laysodu();
-        System.out.println(n);
-        A.print();
-        A.rutTien();
-        A.print();
+        //   =========== diem=====
+//String str = Diem.nhapDiem();
+//Diem ds = Diem.parseFromString(str);
 
-        Account B = new Account();
-        B.init("0002", "Nguyen B");
-        B.print();
-        A.chuyenTien(B);
-        System.out.println("Số tiền còn lại của A:" + A.laysodu());
-        System.out.println("Số tiền còn lại của B:" + B.laysodu());
+//        Diem ds = new Diem(1, 2);
+//        Diem ds1 = new Diem();
+//        Diem ds2 = Diem.generate();
+//
+//        System.out.println(ds);
+//        System.out.println(ds1);
+//        System.out.println(ds2);
+//
+//        double n = ds.khoangCachAB(ds2);
+//        System.out.println("Khoảng cách giữa " +ds +" và " + ds2 + " là: " + n);
+//
+//        Diem ds4 = ds.diemDoiXung();
+//        System.out.println("ds4: " +ds4);
+//        System.out.println(ds4 + " thuộc phần tư thứ: " +ds4.thuocPhantu());
+
+//        ================Tam giac===============
+//
+//        Triangle trg = new Triangle();
+//        System.out.println(trg);
+//       double n =trg.chuVi();
+//        System.out.println(n);
+//
+//        // Tính chu vi tam giac
+//
+//        // Tính diện tích tam giác
+
+//        ================Đơn thức===============
+
+//        String str = DonThuc.nhapDonThuc();
+//        System.out.println(str);
+
+
     }
 }
 

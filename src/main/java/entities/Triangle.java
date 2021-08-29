@@ -3,61 +3,46 @@ package entities;
 import java.util.Scanner;
 
 public class Triangle {
-    private int canhA; //1
-    private int canhB; //2
-    private int canhC; //3
+    private Diem d1;
+    private Diem d2;
+    private Diem d3;
+
+    // Hàm khởi tạo tam giác
 
 
-    public int nhapCanhA() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập vào cạnh A: ");
-        int ca = Integer.parseInt(sc.next());
-        this.canhA = ca;
-        return ca;
+    public Triangle() {
+        // this.d1= new Diem(1,3);
+        this.d1 = Diem.generate();
+        this.d2 = Diem.generate();
+        this.d3 = Diem.generate();
     }
 
-    public int nhapCanhB() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập vào cạnh B: ");
-        int cb = Integer.parseInt(sc.nextLine());
-        this.canhB = cb;
-        return cb;
+    public Triangle(Diem d1, Diem d2, Diem d3) {
+        this.d1 = d1;
+        this.d2 = d2;
+        this.d3 = d3;
     }
 
-    public int nhapCanhC() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập vào cạnh C: ");
-        int cc = Integer.parseInt(sc.nextLine());
-        this.canhC = cc;
-        return cc;
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Triangle {\n");
+        sb
+                .append("\t d1= ").append("{").append(d1.getX()).append(",").append(d1.getY()).append("}").append("\n")
+                .append("\t d2= ").append("{").append(d2.getX()).append(",").append(d2.getY()).append("}").append("\n")
+                .append("\t d3= ").append("{").append(d3.getX()).append(",").append(d3.getY()).append("}").append("\n")
+
+                .append('}');
+        return sb.toString();
     }
 
-    public int getCanhA() {
-        return this.canhA;
+    public double chuVi (){
+        double n1 = this.d1.khoangCachAB(d2);
+        System.out.println("n1: " + n1);
+        double n2 = this.d2.khoangCachAB(d3);
+        System.out.println("n2: " + n2);
+        double n3 = this.d1.khoangCachAB(d3);
+        System.out.println("n3: " + n3);
+       double c= n1+n2+n3;
+        return c;
     }
-
-    public int getCanhB() {
-        return this.canhB;
-    }
-
-    public int getCanhC() {
-        return this.canhC;
-    }
-
-    public void xuatTamGiac(){
-        System.out.println("Cạnh a: " + this.canhA);
-        System.out.println("Cạnh b: " + this.canhB);
-        System.out.println("Cạnh c: " + this.canhC);
-    }
-
-    //Tạo 1 hàm tính chu vi: tinhChuVi
-    // trả về integer, kiểu public
-
-    public int tinhChuvi (){
-        int chuvi=0;
-        chuvi=this.canhA+ this.canhB+this.canhC;
-        return chuvi;
-    }
-
-
 }
